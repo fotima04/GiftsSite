@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block content%}
+<head>
+  <style>
+    .card{
+      transition: 1s;
+
+    }
+  </style>
+</head>
+<body>
+    <h1 class="gifts"><b>Our gifts</b></h1>
+    <section class="card-gift">
+      {%for i in gifts%}
+        <div class="card" style="width: 20rem;">
+            <img src="{{i.picture.url}}" style="height: 15rem;" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="text-transform: uppercase;">{{i.name}}</h5>
+              <p>{{i.tarif}}</p>
+              <h6><b>{{i.price}} sum</b></h6>
+            </div>
+          </div>
+          {%endfor%}
+    </section>
+    {%endblock%}
+</body>
+</html>
